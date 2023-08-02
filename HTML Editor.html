@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Simple HTML Compiler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #editor {
+      width: 100%;
+      height: 300px;
+    }
+
+    button {
+    background-color: #4CAF50; /* Change this to your desired color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  button:hover {
+    background-color: #45a049; /* Change this to your desired hover color */
+  }
+  </style>
+
+<script>
+   
+    function clearContent() {
+      document.getElementById('editor').value = ''; // Clear the textarea content
+      const previewFrame = document.getElementById('preview');
+      const preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+      preview.open();
+      preview.write('');
+      preview.close(); // Clear the iframe content
+    }
+  </script>
+</head>
+<body>
+  <CENTER><h1>HTML Compiler</h1></CENTER>
+  <textarea id="editor" placeholder="Write your HTML code here..."></textarea>
+  <BR>
+    <BR>
+  <button onclick="runCode()",>Run Code</button>  
+  <button onclick="clearContent()">Clear</button>   
+  <BR>
+<BR>
+  <iframe id="preview" width="100%" height="300px"></iframe>
+
+  <script>
+    function runCode() {
+      const editorContent = document.getElementById('editor').value;
+      const previewFrame = document.getElementById('preview');
+      const preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+      preview.open();
+      preview.write(editorContent);
+      preview.close();
+    }
+  </script>
+</body>
+</html>

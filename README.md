@@ -1,7 +1,7 @@
 # HTML.Editor
 <p>This code creates a simple HTML editor with a textarea where you can write your HTML code and a "Run Code" button to preview the output in an iframe below the textarea.</p>
 
-<b>Note</b><br><br>
+<b>Note</b><br>
 The code uses the eval function for expression evaluation, which can be a security risk in some scenarios. It's recommended to use safer alternatives for expression evaluation in production applications.<br>
 
 <b>Contributions</b><br>
